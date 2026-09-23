@@ -9,6 +9,8 @@ function App() {
     // Yahan se humne <Router> hata diya hai kyunki wo main.jsx mein pehle se hoga
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/email-login" element={<Login />} />
+      <Route path="/verify-email" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
