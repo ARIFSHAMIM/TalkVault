@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^10.0.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0"
+  },
+  "dependencies": {
+    "agora-access-token": "^2.0.4",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.3"
+  },
+  "name": "talkvault",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
