@@ -179,6 +179,7 @@ app.post('/register', async (req, res) => {
       email: email.toLowerCase(),
       phone,
       password: hashedPassword,
+      emailVerified: true,
       emailVerificationToken,
       emailVerificationExpires: Date.now() + 24 * 60 * 60 * 1000,
       lastUsernameChange: null
@@ -190,7 +191,7 @@ app.post('/register', async (req, res) => {
       action: 'verify your TalkVault email'
     });
 
-    res.status(201).json({ message: "Account created. Check your email to verify it." });
+    res.status(201).json({ message: "Account created successfully. You can log in now." });
   } catch (error) {
     res.status(500).json({ error: "Server error during registration" });
   }
@@ -216,10 +217,6 @@ app.post('/login', async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ error: "Invalid credentials!" });
     }
-    if (!user.emailVerified) {
-      return res.status(403).json({ error: "Please verify your email before logging in." });
-    }
-
     const token = createSession(user);
 
     res.json({
